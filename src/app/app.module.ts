@@ -3,22 +3,42 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { ProfilComponent } from './profil/profil.component';
-import { FormsModule } from '@angular/forms';
-import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { EvenementComponent } from './evenement/evenement.component';
+import { EvenementPipe } from './pipe/filtre-evenement.pipe';
+import { addEvenementComponent } from './evenement/addEvenement.component ';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ParticipantComponent } from './participant/participant.component';
+import { FiltreParticipantPipe } from './pipe/filtre-participant.pipe';
+import { addParticipantComponent } from './participant/addParticipant.component';
+
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    ProfilComponent,
-    UtilisateurComponent
+    addEvenementComponent,
+    EvenementComponent,
+    EvenementPipe,
+    ParticipantComponent,
+    FiltreParticipantPipe,
+    addParticipantComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+ 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

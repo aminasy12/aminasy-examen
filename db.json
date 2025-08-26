@@ -1,0 +1,74 @@
+{
+  "evenements": [
+    {
+      "id": "10",
+      "nom": "Fall",
+      "date": "2024-02-6",
+      "lieu": "dakar",
+      "description": "Korite",
+      "organisateur": "Ndeye"
+    },
+    {
+      "id": "5",
+      "nom": "SY",
+      "date": "2022-03-26",
+      "lieu": "dakar",
+      "description": "reception",
+      "organisateur": "Fatou"
+    },
+    {
+      "id": "6",
+      "nom": "sy",
+      "date": "2021-01-26",
+      "lieu": "dakar",
+      "description": "Tabaski",
+      "organisateur": "Mia"
+    },
+    {
+      "id": "2maman",
+      "nom": "sy",
+      "date": "2025-03-30",
+      "lieu": "dakar",
+      "description": "reception",
+      "organisateur": "tacko"
+    }
+  ],
+  "participants": [
+    {
+      "id": "8",
+      "nom": "Toure",
+      "prenom": "Amina",
+      "email": "amina@g.com",
+      "telephone": "774426403",
+      "presence": "Présent",
+      "evenementId": null
+    },
+    {
+      "id": "9",
+      "nom": "PAYE",
+      "prenom": "Kadia",
+      "email": "kadia@g.com",
+      "telephone": "787654323",
+      "presence": "Présent",
+      "evenementId": null
+    },
+    {
+      "id": "2",
+      "nom": "Ndiaye",
+      "prenom": "Nabou",
+      "email": "nndiaye@g.com",
+      "telephone": "767894323",
+      "presence": "Présent",
+      "evenementId": null
+    },
+    {
+      "id": "5sy",
+      "nom": "sy",
+      "prenom": "amina",
+      "email": "asy@g.com",
+      "telephone": "777654323",
+      "presence": "Présent",
+      "evenementId": "10"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<div class="col-md-8 offset-md-2 mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-teal text-white text-center">
+            <h4>Ajouter un événement</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="evenementForm" (ngSubmit)="addEvenement()">
+                <div class="row">
+                    <!-- Nom -->
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label fw-bold text-primary">Nom de l'événement</label>
+                        <input type="text" class="form-control" formControlName="nom" required>
+                        <div *ngIf="submitForm && f2.nom.errors">
+                            <span class="text-danger" *ngIf="f2.nom.errors['required']">*Nom est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-primary">Date</label>
+                        <input type="date" class="form-control" formControlName="date" required>
+                        <div *ngIf="submitForm && f2.date.errors">
+                            <span class="text-danger" *ngIf="f2.date.errors['required']">*Date est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Lieu -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-primary">Lieu</label>
+                        <input type="text" class="form-control" formControlName="lieu" required>
+                        <div *ngIf="submitForm && f2.lieu.errors">
+                            <span class="text-danger" *ngIf="f2.lieu.errors['required']">*Lieu est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label fw-bold text-primary">Description</label>
+                        <textarea class="form-control" formControlName="description" required></textarea>
+                        <div *ngIf="submitForm && f2.description.errors">
+                            <span class="text-danger" *ngIf="f2.description.errors['required']">*Description est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Organisateur -->
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label fw-bold text-primary">Organisateur</label>
+                        <input type="text" class="form-control" formControlName="organisateur" required>
+                        <div *ngIf="submitForm && f2.organisateur.errors">
+                            <span class="text-danger" *ngIf="f2.organisateur.errors['required']">*Organisateur est obligatoire</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-success px-4 py-2 fw-bold shadow" type="submit">
+                        <i class="fas fa-check"></i> Valider
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

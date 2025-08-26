@@ -1,0 +1,82 @@
+<div class="col-md-8 offset-md-2 mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-teal text-white text-center">
+            <h4>Ajouter un participant</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="participantForm" (ngSubmit)="addParticipant()">
+                <div class="row">
+                    <!-- Nom -->
+                    <div class="col-md-6 mb-3">
+                        <label for="nom" class="form-label fw-bold text-primary">Nom</label>
+                        <input type="text" class="form-control" formControlName="nom" required>
+                        <div *ngIf="submitForm && f2.nom.errors">
+                            <span class="text-danger" *ngIf="f2.nom.errors['required']">*Nom est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Prénom -->
+                    <div class="col-md-6 mb-3">
+                        <label for="prenom" class="form-label fw-bold text-primary">Prénom</label>
+                        <input type="text" class="form-control" formControlName="prenom" required>
+                        <div *ngIf="submitForm && f2.prenom.errors">
+                            <span class="text-danger" *ngIf="f2.prenom.errors['required']">*Prénom est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label fw-bold text-primary">Email</label>
+                        <input type="email" class="form-control" formControlName="email" required>
+                        <div *ngIf="submitForm && f2.email.errors">
+                            <span class="text-danger" *ngIf="f2.email.errors['required']">*Email est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Téléphone -->
+                    <div class="col-md-6 mb-3">
+                        <label for="telephone" class="form-label fw-bold text-primary">Téléphone</label>
+                        <input type="text" class="form-control" formControlName="telephone" required>
+                        <div *ngIf="submitForm && f2.telephone.errors">
+                            <span class="text-danger" *ngIf="f2.telephone.errors['required']">*Téléphone est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Présence -->
+                    <div class="col-md-6 mb-3">
+                        <label for="presence" class="form-label fw-bold text-primary">Présence</label>
+                        <select class="form-control" formControlName="presence" required>
+                            <option value="">Sélectionnez une option</option>
+                            <option value="Présent">Présent</option>
+                            <option value="Absent">Absent</option>
+                        </select>
+                        <div *ngIf="submitForm && f2.presence.errors">
+                            <span class="text-danger" *ngIf="f2.presence.errors['required']">*Présence est obligatoire</span>
+                        </div>
+                    </div>
+
+                    <!-- Événements -->
+                    <div class="col-md-6 mb-3">
+                        <label for="evenementId" class="form-label fw-bold text-primary">Événements</label>
+                        <select class="form-control" formControlName="evenementId" required>
+                            <option value="">Sélectionnez un événement</option>
+                            <option *ngFor="let evenement of evenements" [value]="evenement.id">
+                                {{ evenement.nom }}
+                            </option>
+                        </select>
+                        <div *ngIf="submitForm && f2.evenementId.errors">
+                            <span class="text-danger" *ngIf="f2.evenementId.errors['required']">*Veuillez sélectionner un événement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bouton Valider -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-success px-4 py-2 fw-bold shadow" type="submit">
+                        <i class="fas fa-check"></i> Valider
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
